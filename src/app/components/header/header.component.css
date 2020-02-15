@@ -1,0 +1,12 @@
+header{
+  height: 40px;
+  background: linear-gradient(50deg, #39c086 40%, #4ec678e6 40%);
+  text-align: center;
+  color: #fff;
+}
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

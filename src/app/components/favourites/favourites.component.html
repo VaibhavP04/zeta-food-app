@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row favourite-wrap">
+    <div class="col-9">
+      <h5>Favourities</h5>
+      <p>Enjoy what you have been ordering!</p>
+    </div>
+    <div class="col-3 text-right">
+      <img src="assets/images/cart.png" class="cart-icon">
+    </div>
+  </div>
+  <ul class="favourite-list">
+    <li class="favourite-list-image" *ngFor="let favourites of favouriteList.recipes">
+      <img [src]="favourites.image" alt="favourite images"/>
+      <div class="row favourite-list-data">
+        <div class="col-6">
+          <p>{{favourites.name}}</p>
+          <p><b>&#x20b9; {{favourites.price}}</b></p>
+        </div>
+        <div class="col-6 text-right">
+          <button type="button">Reorder</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>
