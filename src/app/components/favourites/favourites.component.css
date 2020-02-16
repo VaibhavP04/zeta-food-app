@@ -8,9 +8,15 @@
   font-size: 12px;
   color: #928e8e;
 }
-.cart-icon{
-  margin-top: 20px;
+fa-icon{
+  font-size: 40px;
+  color: #ccc;
 }
+
+fa-icon.add{
+  color: #39c086;
+}
+
 .favourite-list{
     width:100%;
     overflow:scroll;
@@ -49,13 +55,17 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
-
+.favourite-wrap .cartCount{
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  color: #fff;
+  font-size: 18px;
+}
 
 .favourite-list::-webkit-scrollbar {
   display: none;
 }
-
-
 
 @media only screen and (max-width: 576px) {
   .favourite-list-image img{

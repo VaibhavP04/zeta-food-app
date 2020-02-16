@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestuarantAppService } from 'src/app/services/restuarant-app.service';
 import { RestuarantObjectModel } from 'src/app/models/restuarant-api.model';
-
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favourites',
@@ -10,9 +10,15 @@ import { RestuarantObjectModel } from 'src/app/models/restuarant-api.model';
 })
 export class FavouritesComponent implements OnInit {
 
-  constructor(private restuarantAppService: RestuarantAppService) { }
-
+  public faShoppingBag = faShoppingBag;
+  public message;
   public favouriteList: RestuarantObjectModel;
+  public noOfItemsAddedToCart: any;
+
+  constructor(private restuarantAppService: RestuarantAppService) {
+   }
+
+
 
   ngOnInit(): void {
     this.favouriteList = new RestuarantObjectModel();
@@ -29,6 +35,10 @@ export class FavouritesComponent implements OnInit {
         }
       }
     );
+  }
+
+  recieveMsg(event){
+    this.noOfItemsAddedToCart = event;
   }
 
 }

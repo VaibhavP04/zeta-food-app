@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row mTop">
+    <div class="col-12">
+      <fa-icon class="Search" [icon]="faSearch"></fa-icon>
+      <input type="text" placeholder="Search for a particular dish or ingredient" [(ngModel)]="searchText"/>
+    </div>
+  </div>
+  <div class="row mTop-20">
+    <div class="col-6">
+      <h5>Select Categories</h5>
+    </div>
+    <div class="col-6 text-right">
+      <p class="filter">Filter <fa-icon [icon]="faFilter"></fa-icon></p>
+    </div>
+  </div>
+  <div class="row mTop-20">
+    <ul class="category-wrap">
+      <li *ngFor="let categories of categoryList.categories" (click)="filterCategories(categories)">
+        <img [src]="categories.image">
+        <p>{{categories.name}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="mTop-20">
+      <div class="menu-list">
+        <div class="col-s-8 col-l-1by3" *ngFor="let i = index; let recipes of filteredArray | filter:searchText">
+          <div class="h100 pb20">
+            <div class="collection_listings_container top-res-box">
+              <a class="img-fluid rounded">
+                <img class="rounded" [src]="recipes.image">
+              </a>
+            </div>
+            <div class="menu-details">
+              <div>
+                <a href="javascript:void(0);" (click)="navigateToDetailPage(recipes)">{{recipes.name}}</a>
+                <p><b>&#x20b9; {{recipes.price}}</b></p>
+              </div>
+              <button *ngIf="selectedArray.length == 0 || selectedIndex!== i" class="add-to-cart" (click)="addToCart(recipes, i)">Add to Bag</button>
+              <button class="add-to-cart" *ngIf="selectedIndex === i && selectedArray.length > 0" ><fa-icon class="deleteCart" [icon]="faMinus" (click)="deleteCart(recipes)"></fa-icon><fa-icon (click)="addToCart(recipes, i)" [icon]="faPlus"></fa-icon></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="filteredArray">
+        <p *ngIf="filteredArray.length === 0" class="flex-center">No Dish</p>
+      </div>
+  </div>
+</div>

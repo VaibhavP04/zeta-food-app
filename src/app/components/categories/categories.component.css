@@ -1,0 +1,152 @@
+.mTop{
+  margin-top: 30px;
+}
+.mTop-20{
+  margin-top: 20px;
+}
+.mTop-20 h5{
+  font-size: 18px;
+}
+fa-icon.Search{
+  position: absolute;
+  color: #ccc;
+  font-size: 20px;
+}
+input{
+    width: 100%;
+    background: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 0 0 10px 30px;
+    color: #ccc;
+}
+input:focus{
+  outline: 0;
+}
+.filter{
+  color: #ccc;
+}
+.filter fa-icon {
+  color: #39c086;
+  margin-left: 20px;
+}
+.category-wrap{
+  padding: 0 0 0 20px;
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+}
+.category-wrap li {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex: 1 1 0;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 5px 5px 5px #ccc;
+  border-bottom: 2px solid #39c086;
+}
+.category-wrap li:last-child{
+  margin-right: 0px;
+}
+.category-wrap li p {
+  margin-bottom: 0;
+}
+.category-wrap img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.category-wrap::-webkit-scrollbar,  .menu-list::-webkit-scrollbar{
+  display: none;
+}
+.menu-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-l-1by3{
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  width: 25%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+}
+.collection_listings_container.top-res-box{
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  height: 160px;
+  width: 100%;
+}
+.collection_listings_container.top-res-box img {
+  height: 160px;
+  width: 100%;
+}
+.menu-details {
+  background: #fff;
+  padding: 10px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-details a {
+  color: #000;
+  display: flex;
+  flex: 1 1 0;
+  margin-right: 30px;
+  word-break: break-all;
+  font-size: 14px;
+}
+button.add-to-cart {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: #39c086;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+button.add-to-cart:focus{
+  outline: 0;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
+.deleteCart{
+  margin-right: 100px;
+}
+
+@media only screen and (max-width: 768px){
+  .col-l-1by3{
+    width: 50%;
+  }
+  .menu-details{
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .input {
+    font-size: 10px;
+  }
+  .col-l-1by3{
+    width: 100%;
+  }
+}
+
+

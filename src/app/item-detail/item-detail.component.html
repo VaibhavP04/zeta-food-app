@@ -1,0 +1,25 @@
+<header>
+  <p>Best Food App</p>
+</header>
+<div class="container-fluid">
+  <div class="row item-details-wrap">
+    <div class="col-12 col-sm-7">
+     <div class="item-detail-image">
+      <img [src]="subscribedValue.image" />
+     </div>
+    </div>
+    <div class="col-12 col-sm-5">
+      <div class="item-details">
+        <h5>{{subscribedValue.name}}</h5>
+        <p><b>&#x20b9;{{subscribedValue.price}}</b></p>
+      </div>
+      <div class="item-details-second-row">
+        <p>Category: {{subscribedValue.category}}</p>
+        <p><fa-icon [icon]="faStar"></fa-icon>{{subscribedValue.rating}} Rating, ({{subscribedValue.reviews}} Reviews)</p>
+        <h5>Details:</h5>
+        <p>{{subscribedValue.details}}</p>
+      </div>
+      <button class="add-to-cart"><fa-icon [icon]="faMinus"></fa-icon><fa-icon [icon]="faPlus"></fa-icon></button>
+    </div>
+  </div>
+</div>

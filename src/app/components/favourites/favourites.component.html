@@ -5,7 +5,9 @@
       <p>Enjoy what you have been ordering!</p>
     </div>
     <div class="col-3 text-right">
-      <img src="assets/images/cart.png" class="cart-icon">
+      <fa-icon *ngIf="!noOfItemsAddedToCart" [icon]="faShoppingBag"></fa-icon>
+      <fa-icon class="add" *ngIf="noOfItemsAddedToCart" [icon]="faShoppingBag"></fa-icon>
+      <p class="cartCount" *ngIf="noOfItemsAddedToCart">{{noOfItemsAddedToCart.length}}</p>
     </div>
   </div>
   <ul class="favourite-list">
@@ -22,5 +24,7 @@
       </div>
     </li>
   </ul>
-
 </div>
+
+<app-categories [Parent]="message" (addToCartValue)="recieveMsg($event)"></app-categories>
+
