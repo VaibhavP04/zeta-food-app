@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faPlus, faMinus, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus, faStar, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { RestuarantAppService } from '../services/restuarant-app.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class ItemDetailComponent implements OnInit {
   public faPlus = faPlus;
   public faMinus = faMinus;
   public faStar = faStar;
+  public faArrowLeft = faArrowLeft;
   public count = 0;
 
   constructor(private route: ActivatedRoute, private router: Router, public ser: RestuarantAppService) {
@@ -38,6 +39,10 @@ export class ItemDetailComponent implements OnInit {
     if (this.count > 0) {
       this.count--;
     }
+  }
+
+  navigateToLandingPage() {
+    this.router.navigate(['']);
   }
 
 }

@@ -29,8 +29,12 @@ input:focus{
   color: #ccc;
 }
 .filter fa-icon {
-  color: #39c086;
+  color: #ccc;
   margin-left: 20px;
+  cursor: pointer;
+}
+.filter .success{
+  color: #39c086;
 }
 .category-wrap{
   padding: 0 0 0 20px;
@@ -47,6 +51,10 @@ input:focus{
   justify-content: start;
   align-items: center;
   box-shadow: 5px 5px 5px #ccc;
+  cursor: pointer;
+
+}
+.category-wrap .addBorder{
   border-bottom: 2px solid #39c086;
 }
 .category-wrap li:last-child{

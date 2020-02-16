@@ -22,6 +22,9 @@ export class CategoriesComponent implements OnInit {
   public searchText;
   public showBtn = false;
   public selectedIndex;
+  public showBorder;
+  public count = 0;
+  public status: boolean = true;
   @Input() Parent;
   @Output() public addToCartValue = new EventEmitter();
   @ViewChild('searchInpt', {static: true}) searchInpt: ElementRef;
@@ -82,7 +85,8 @@ export class CategoriesComponent implements OnInit {
     this.deleteCartTostr();
   }
 
-  filterCategories(filteredObj) {
+  filterCategories(filteredObj, index) {
+    this.showBorder = index;
     this.filteredArray = this.categoryList.recipes;
     this.filteredArray = this.categoryList.recipes.filter(
       book => book.category === filteredObj.name);
@@ -104,6 +108,10 @@ export class CategoriesComponent implements OnInit {
 
   deleteCartTostr() {
     this.toastr.success('Item deleted from the cart');
+  }
+
+  showFilters() {
+    this.status = !this.status;
   }
 
 }

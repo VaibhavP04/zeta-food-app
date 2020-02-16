@@ -10,12 +10,12 @@
       <h5>Select Categories</h5>
     </div>
     <div class="col-6 text-right">
-      <p class="filter">Filter <fa-icon [icon]="faFilter"></fa-icon></p>
+      <p class="filter">Filter <fa-icon [ngClass]="status ? 'success' : 'danger'" [icon]="faFilter" (click)="showFilters()"></fa-icon></p>
     </div>
   </div>
-  <div class="row mTop-20">
+  <div *ngIf="status" class="row mTop-20">
     <ul class="category-wrap">
-      <li *ngFor="let categories of categoryList.categories" (click)="filterCategories(categories)">
+      <li [ngClass]="{'addBorder': showBorder === i}" *ngFor="let i = index;let categories of categoryList.categories" (click)="filterCategories(categories, i)">
         <img [src]="categories.image">
         <p>{{categories.name}}</p>
       </li>
